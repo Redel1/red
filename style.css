@@ -1,0 +1,410 @@
+.input {
+  color: #8707ff;
+  border: 2px solid #8707ff;
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+  max-width: 190px;
+ }
+ 
+ .input:focus {
+  box-shadow: 2px 2px 15px #000000 inset;
+ }
+
+body{ background: #bdbdbd;
+  color: rgb(0, 0, 0);
+  font-family: 'Mulish', sans-serif;
+  font-family: 'Sofia Sans', sans-serif;
+
+}
+.btn {
+  --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+  --border-width: .125em;
+  --curve-size: .5em;
+  --blur: 30px;
+  --bg: #080312;
+  --color: #afffff;
+  color: var(--color);
+    /* use position: relative; so that BG is only for .btn */
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: .5em 1.5em;
+  font-size: 17px;
+  border: 0;
+  text-transform: uppercase;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, .6);
+  clip-path: polygon(
+            /* Top-left */
+            0% var(--curve-size),
+
+            var(--curve-size) 0,
+            /* top-right */
+            100% 0,
+            100% calc(100% - var(--curve-size)),
+
+            /* bottom-right 1 */
+            calc(100% - var(--curve-size)) 100%,
+            /* bottom-right 2 */
+            0 100%);
+  transition: color 250ms;
+}
+
+.btn::after,
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.btn::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+}
+
+
+.btn::after {
+  background: var(--bg);
+  z-index: -1;
+  clip-path: polygon(
+            /* Top-left */
+            var(--border-width) 
+            calc(var(--curve-size) + var(--border-width) * .5),
+
+            calc(var(--curve-size) + var(--border-width) * .5) var(--border-width),
+
+            /* top-right */
+            calc(100% - var(--border-width)) 
+            var(--border-width),
+
+            calc(100% - var(--border-width)) 
+            calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+
+            /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) calc(100% - var(--border-width)),
+            /* bottom-right 2 */
+            var(--border-width) calc(100% - var(--border-width)));
+  transition: clip-path 500ms;
+}
+
+.btn:where(:hover, :focus)::after {
+  clip-path: polygon(
+                /* Top-left */
+                calc(100% - var(--border-width)) 
+
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+    
+                calc(100% - var(--border-width))
+
+                var(--border-width),
+    
+                /* top-right */
+                calc(100% - var(--border-width))
+
+                 var(--border-width),
+    
+                calc(100% - var(--border-width)) 
+
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)),
+    
+                /* bottom-right 1 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * .5)) 
+                calc(100% - var(--border-width)),
+
+                /* bottom-right 2 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+                calc(100% - var(--border-width)));
+  transition: 200ms;
+}
+
+.btn:where(:hover, :focus) {
+  color: rgb(255, 255, 255);
+}
+  @keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%
+  }
+
+  50% {
+    background-position: 70% 100%
+  }
+
+  100% {
+    background-position: 31% 0%
+  }
+}
+.spinner {
+  background-image: linear-gradient(rgb(161, 52, 224) 35%,rgb(0, 225, 255));
+  width: 100px;
+  height: 100px;
+  animation: spinning82341 1.7s linear infinite;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+}
+
+.spinner1 {
+  background-color: rgb(36, 36, 36);
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  filter: blur(10px);
+}
+
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+  .backfon{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgb(139, 139, 139);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form{
+  position: relative;
+  overflow: hidden;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+.error{
+  background: rgba(139, 20, 236, 0.246);
+  margin: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid rgba(139, 20, 236, 0.246);
+}
+h4{
+  display: flex;
+  justify-content: space-around;
+}
+
+a{
+  text-decoration: none;
+  color: #000000;
+}
+.menu{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+.c{
+ display: flex;
+  
+}
+.g{
+  font-family: 'Mulish', sans-serif;
+font-family: 'Sofia Sans', sans-serif;
+}
+#circle {
+	width: 100px;
+	height: 100px;
+	background: rgb(219, 17, 17);
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  display: flex;
+ 
+}
+#square {
+		width: 100px;
+	height: 100px;
+	background:  #2ddd16;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  display: flex;
+ 
+}
+#circle2 {
+	width: 100px;
+	height: 100px;
+	background:  #8707ff;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  display: flex;
+  animation:move-bg7234 2s infinite linear;
+}
+@keyframes color {
+  from {
+    background: #ffb300;
+  }
+  50% {
+    background: #00fffb;
+  }
+to {
+  background: #ffae00;
+}
+}
+.ci{
+ 
+   display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+.a {
+  text-align: center;
+  
+}
+.cv{
+  padding: 15px;
+  margin: 15px;
+  backdrop-filter: blur(2px) saturate(200%);
+  -webkit-backdrop-filter: blur(2px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.41);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+} 
+
+
+img.small-rotate {
+  -webkit-transition: all 1s ease;
+          transition: all 1s ease;
+}
+img.small-rotate:hover {
+  -webkit-transform: rotate(15deg); /* Градусы поворота можно изменить по необходимости */
+          transform: rotate(15deg); /* Градусы поворота можно изменить по необходимости */
+}
+
+.sh{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.41);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  gap: 50px;
+  margin: 15px;
+}
+
+.portfolio{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.41);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  gap: 50px;
+  margin: 15px;
+}
+
+
+.df{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+.font{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+.u{
+  font-family: 'Mulish', sans-serif;
+font-family: 'Sofia Sans', sans-serif;
+}
+header{
+  background: #ececec  ;
+  
+}
+body{
+  background-color: rgb(13, 165, 236);
+  margin: 0%;
+}
+.rheader{
+  padding: 15px;
+  word-spacing: 30px ;
+  
+}
+.name a {
+  color:  rgb(255, 251, 0);
+}
+.name{
+  padding: 15px;
+  margin: 15px;
+  backdrop-filter: blur(2px) saturate(200%);
+  -webkit-backdrop-filter: blur(2px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.41);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+
+@media (min-width: 1920px) {
+  header {
+      justify-content: center;
+  }
+}
+@media (max-width: 920px) {
+ main{
+     width: 95%;
+ }
+  
+}
+@media (max-width: 490px) {
+  header ul :not(.menu ul) {
+     display: none;
+  }
+}
+
+@media (max-width: 810px) {
+  .c{
+    display: block;
+    
+   }
+}
+
+@media (max-width: 810px) {
+  .portfolio{
+    display: block;
+    
+   }
+}
+
+@media (max-width: 910px) {
+  .stages{
+    display: block;
+    
+   }
+}
+
+
+.stages{
+  display: flex;  
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+ 
+  gap: 50px;
+  margin: 25px;
+  
+}
+.q {
+  background-color: rgba(255, 255, 255, 0.41);
+  border: 1px;
+  border-radius: 25px;
+  padding: 13px;
+  width: 255px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <h4>Вход</h4>
+        <form action="#" method="POST" v-on:submit.prevent="login">
+ <div class="error" v-if="error">
+            {{error}}
+        </div>
+            <br><input v-model="email" type="email" name="email" class="input" placeholder="email"><br>
+            <br><input v-model="password" type="password" name="password" class="input" placeholder="password"><br>
+
+            <button class="btn">
+                Войти
+            </button>
+          <div class="23">
+                 <a href="">Забыли пароль ?</a> 
+            <a href="register.html">Регистрация</a> 
+            <br><a href="#">Или войти через</a><br>
+           <div class="1">
+              <img src="dbtid_AACHQZx4adzBZiBCpy7P4xtzn3UNxr-wcoE.png" alt="" width="30" height="30"  >
+           </div>
+          </div>
+             
+
+            <div class="backfon" v-if="loading">
+                <div class="spinner">
+                    <div class="spinner1"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="myscript.js"></script>
+</body>
+
+</html>
